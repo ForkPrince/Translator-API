@@ -40,7 +40,7 @@ def translate():
             return jsonify({ "error": "Failed to generate output. Output Text Array is empty." }), 500
 
     elif request.method == "GET":
-        return "This endpoint supports POST requests for language detection. Use POST to detect language."
+        return jsonify({ "languages": supported })
 
 if __name__ == "__main__":
     serve(app, host="0.0.0.0", port=5000)
